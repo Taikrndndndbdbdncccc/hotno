@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Profile Premium - MUHAJI</title>
+    
+    <!-- Link Font & Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+        <!-- HOME PAGE -->
+        <div id="home" class="page active">
+            <div class="top-status">
+                <p id="current-day">MEMUAT...</p>
+                <p id="day-greeting">Selamat Datang</p>
+            </div>
+            <div id="clock">00.00</div>
+            <p class="location-text"><i class="fas fa-location-arrow"></i> Sungai Puyu, Penang</p>
+            
+            <div class="prayer-bar">
+                <div class="p-item"><label>Subuh</label><span id="fajr">--:--</span></div>
+                <div class="p-item"><label>Zuhur</label><span id="dhuhr">--:--</span></div>
+                <div class="p-item"><label>Asar</label><span id="asr">--:--</span></div>
+                <div class="p-item"><label>Magrib</label><span id="maghrib">--:--</span></div>
+                <div class="p-item"><label>Isyak</label><span id="isha">--:--</span></div>
+            </div>
+
+            <div class="avatar-area">
+                <img src="pp saya.jpg" alt="Profile">
+            </div>
+
+            <!-- NAMA DI BAWAH PP -->
+            <div class="profile-name">MUHAJIR</div>
+
+            <div class="social-row">
+                <a href="#" class="soc-btn ig"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="soc-btn tt"><i class="fab fa-tiktok"></i></a>
+                <a href="#" class="soc-btn wa"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="soc-btn fb"><i class="fab fa-facebook-f"></i></a>
+            </div>
+
+            <div class="menu-stack">
+                <div class="menu-btn" onclick="openPin()"><i class="fas fa-user-lock"></i> <span>Pribadi (Locked)</span></div>
+                <div class="menu-btn" onclick="showPage('foto')"><i class="fas fa-images"></i> <span>Momen Foto</span></div>
+                <div class="menu-btn" onclick="showPage('kawan')"><i class="fas fa-users"></i> <span>Daftar Kawan</span></div>
+                <div class="menu-btn" onclick="showPage('kerja')"><i class="fas fa-briefcase"></i> <span>Pekerjaan</span></div>
+                <div class="menu-btn" onclick="showPage('hobi')"><i class="fas fa-heart"></i> <span>Hobi</span></div>
+                <div class="menu-btn" onclick="showPage('mantan')"><i class="fas fa-ghost"></i> <span>Mantan</span></div>
+            </div>
+        </div>
+
+        <!-- DETAILS PAGE -->
+        <div id="details" class="page">
+            <button class="back-btn" onclick="goHome()"><i class="fas fa-chevron-left"></i> KEMBALI</button>
+            <h2 id="det-title"></h2>
+            <div id="det-content"></div>
+        </div>
+
+        <!-- PIN OVERLAY -->
+        <div id="pin-overlay">
+            <i class="fas fa-shield-alt fa-3x" style="color: var(--accent); margin-bottom: 20px;"></i>
+            <p>Masukkan PIN Akses</p>
+            <div class="pin-dots">
+                <div class="dot" id="dot1"></div><div class="dot" id="dot2"></div>
+                <div class="dot" id="dot3"></div><div class="dot" id="dot4"></div>
+            </div>
+            <div class="keypad">
+                <div class="key" onclick="pressKey('1')">1</div><div class="key" onclick="pressKey('2')">2</div><div class="key" onclick="pressKey('3')">3</div>
+                <div class="key" onclick="pressKey('4')">4</div><div class="key" onclick="pressKey('5')">5</div><div class="key" onclick="pressKey('6')">6</div>
+                <div class="key" onclick="pressKey('7')">7</div><div class="key" onclick="pressKey('8')">8</div><div class="key" onclick="pressKey('9')">9</div>
+                <div class="key" onclick="closePin()" style="color:var(--red); font-size:12px;">X</div><div class="key" onclick="pressKey('0')">0</div><div class="key" onclick="clearPin()"><i class="fas fa-backspace"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX VIEWER -->
+    <div id="media-viewer" onclick="closeViewer()">
+        <div id="viewer-box" onclick="event.stopPropagation()">
+            <span class="close-v" onclick="closeViewer()">&times;</span>
+            <div id="v-box"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
